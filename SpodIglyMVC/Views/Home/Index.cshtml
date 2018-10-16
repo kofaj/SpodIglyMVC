@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@model SpodIglyMVC.ViewModels.HomeViewModel
+
+@{
+
+}
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
@@ -23,66 +29,14 @@
     </header>
     <nav class="genres-horizontal">
         <ul>
+            @foreach (var genre in Model.Genres)
+            {
             <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/rock.png); ">
-                    Rock
+                <a href="@Url.Action("List", "Store", new { genrename = genre.Name.ToLower() })" style="background-image: @Url.Content("~/Content/Genre-icons/" + genre.IconFilename)">
+                    @genre.Name
                 </a>
             </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/rnb.png); ">
-                    R&B
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/electro.png); ">
-                    Electronic
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/metal.png); ">
-                    Metal
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/pop.png); ">
-                    Pop
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/classics.png); ">
-                    Classical
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/jazz.png); ">
-                    Jazz
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/reagge.png); ">
-                    Reagge
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/other.png); ">
-                    Inne
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/hiphop.png); ">
-                    Hip Hop
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/alternative.png); ">
-                    Alternative
-                </a>
-            </li>
-            <li>
-                <a href="" style="background-image: url(../Content/Genre-icons/promos.png); ">
-                    Promocje
-                </a>
-            </li>
+            }
         </ul>
         <a href="">
             <img id="baner-main" src="../Content/Images/baner-main.png" />

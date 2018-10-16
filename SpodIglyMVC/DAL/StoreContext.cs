@@ -14,7 +14,7 @@ namespace SpodIglyMVC.DAL
 
         static StoreContext()
         {
-            Database.SetInitializer<StoreContext>(new StoreInitializer());
+            Database.SetInitializer(new StoreInitializer());
         }
 
         public DbSet<Album> Albums { get; set; }
@@ -32,7 +32,7 @@ namespace SpodIglyMVC.DAL
             base.Seed(context);
         }
 
-        private async void AddAlbums(StoreContext context)
+        private void AddAlbums(StoreContext context)
         {
             var albums = new List<Album>
             {
@@ -48,10 +48,10 @@ namespace SpodIglyMVC.DAL
             };
 
             albums.ForEach(a => context.Albums.AddOrUpdate(a));
-            await context.SaveChangesAsync();
+            context.SaveChanges();
         }
 
-        private async void SeedStoreData(StoreContext context)
+        private void SeedStoreData(StoreContext context)
         {
             var genres = new List<Genre>
             {
@@ -70,7 +70,7 @@ namespace SpodIglyMVC.DAL
             };
 
             genres.ForEach(f => context.Genres.AddOrUpdate(f));
-            await context.SaveChangesAsync();
+            context.SaveChanges();
         }
     }
 }

@@ -73,3 +73,7 @@ C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\EntityFramework.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\EntityFramework.SqlServer.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\EntityFramework.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.InitialCreate.resources
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.csproj.GenerateResource.cache
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.NewModelsAdded.resources
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.csprojAssemblyReference.cache

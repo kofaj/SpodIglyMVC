@@ -1,9 +1,7 @@
 ﻿using SpodIglyMVC.DAL;
-using SpodIglyMVC.Models;
+using SpodIglyMVC.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SpodIglyMVC.Controllers
@@ -15,9 +13,18 @@ namespace SpodIglyMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var genreList = db.Genres.ToList();
+            var genres = db.Genres.ToList();
+            var newArrials = db.Albums.Where(w => !w.IsHidden).OrderByDescending(o => o.DateAdded).Take(3).ToList();
+            var bestSellers = db.Albums.Where(w => !w.IsHidden && w.IsBestseller).Take(3).OrderBy(g => new Guid()).ToList();
 
-            return View();
+            var vm = new HomeViewModel
+            {
+                Bestsellers = bestSellers,
+                NewArrivals = newArrials,
+                Genres = genres
+            };
+
+            return View(vm);
         }
 
         public ActionResult Details()
