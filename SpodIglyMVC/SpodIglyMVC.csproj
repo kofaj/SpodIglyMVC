@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -63,6 +66,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -70,6 +76,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -98,6 +107,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Covers\1.png" />
+    <Content Include="Content\Covers\2.png" />
+    <Content Include="Content\Covers\3.png" />
+    <Content Include="Content\Covers\4.jpg" />
+    <Content Include="Content\Covers\5.png" />
+    <Content Include="Content\Covers\594358f0-3ef5-4920-b7c0-6d86c282df20.jpg" />
+    <Content Include="Content\Covers\6.png" />
+    <Content Include="Content\Covers\7.png" />
+    <Content Include="Content\Covers\8.png" />
+    <Content Include="Content\Covers\9.png" />
+    <Content Include="Content\Covers\aa9760ef-b6dc-4242-a788-2573cfc4732d.jpg" />
+    <Content Include="Content\Genre-icons\alternative.png" />
+    <Content Include="Content\Genre-icons\classics.png" />
+    <Content Include="Content\Genre-icons\electro.png" />
+    <Content Include="Content\Genre-icons\hiphop.png" />
+    <Content Include="Content\Genre-icons\jazz.png" />
+    <Content Include="Content\Genre-icons\metal.png" />
+    <Content Include="Content\Genre-icons\other.png" />
+    <Content Include="Content\Genre-icons\pop.png" />
+    <Content Include="Content\Genre-icons\promos.png" />
+    <Content Include="Content\Genre-icons\reagge.png" />
+    <Content Include="Content\Genre-icons\rnb.png" />
+    <Content Include="Content\Genre-icons\rock.png" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Images\ajax-loader.png" />
     <Content Include="Content\Images\baner-main.png" />
@@ -193,18 +225,26 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Prototype\Main.html" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.0.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.0.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleMobileConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ViewSwitcherController.cs" />
     <Compile Include="DAL\StoreContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AppConfig.cs" />
+    <Compile Include="Infrastructure\UrlHelper.cs" />
     <Compile Include="Migrations\201810142022334_InitialCreate.cs" />
     <Compile Include="Migrations\201810142022334_InitialCreate.Designer.cs">
       <DependentUpon>201810142022334_InitialCreate.cs</DependentUpon>
@@ -241,6 +281,11 @@
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
     <Content Include="Views\Shared\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Kontakt.cshtml" />
+    <Content Include="Views\Home\Onas.cshtml" />
+    <Content Include="Views\Home\Regulamin.cshtml" />
+    <Content Include="Views\Home\Wysylka.cshtml" />
+    <Content Include="Views\Home\Index.mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -250,8 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Covers\" />
-    <Folder Include="Content\Genre-icons\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810142022334_InitialCreate.resx">

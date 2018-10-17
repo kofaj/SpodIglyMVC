@@ -1,8 +1,5 @@
 ﻿@model SpodIglyMVC.ViewModels.HomeViewModel
-
-@{
-
-}
+@using SpodIglyMVC.Infrastructure
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +29,7 @@
             @foreach (var genre in Model.Genres)
             {
             <li>
-                <a href="@Url.Action("List", "Store", new { genrename = genre.Name.ToLower() })" style="background-image: @Url.Content("~/Content/Genre-icons/" + genre.IconFilename)">
+                <a href="@Url.Action("List", "Store", new { genrename = genre.Name.ToLower() })" style="background-image: url(@Url.GenreIconPath(genre.IconFilename)); ">
                     @genre.Name
                 </a>
             </li>
@@ -45,95 +42,45 @@
 
     <section>
         <ul class="ThreeColumnsCoversList large-cover-list">
-            <li>
-                <article>
-                    <a class="addtocartlink" href="aaaa">
-                        <img src="../Content/Images/cart.png" />
-                    </a>
-                    <a class="productdetailslink" href="asd">
-                        <div class="newFlag"></div>
-                        <img class="album-cover" src="../Content/Covers/1.png" />
-                        <h1>
-                            Testowy obrazek
-                        </h1>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a class="addtocartlink" href="aaaa">
-                        <img src="../Content/Images/cart.png" />
-                    </a>
-                    <a class="productdetailslink" href="asd">
-                        <div class="newFlag"></div>
-                        <img class="album-cover" src="../Content/Covers/2.png" />
-                        <h1>
-                            Testowy obrazek
-                        </h1>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a class="addtocartlink" href="aaaa">
-                        <img src="../Content/Images/cart.png" />
-                    </a>
-                    <a class="productdetailslink" href="asd">
-                        <div class="newFlag"></div>
-                        <img class="album-cover" src="../Content/Covers/3.png" />
-                        <h1>
-                            Testowy obrazek
-                        </h1>
-                    </a>
-                </article>
-            </li>
+            @foreach (var newArrival in Model.NewArrivals)
+            {
+                <li>
+                    <article>
+                        <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new { id = newArrival.AlbumId })">
+                            <img src="../Content/Images/cart.png" />
+                        </a>
+                        <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = newArrival.AlbumId })">
+                            <div class="newFlag"></div>
+                            <img class="album-cover" src="@Url.CoverIconFile(newArrival.CoverFileName)" />
+                            <h1>
+                                @newArrival.ArtistName - @newArrival.AlbumTitle
+                            </h1>
+                        </a>
+                    </article>
+                </li>
+            }
         </ul>
     </section>
 
     <section>
         <ul class="ThreeColumnsCoversList large-cover-list">
-            <li>
-                <article>
-                    <a class="addtocartlink" href="aaaa">
-                        <img src="../Content/Images/cart.png" />
-                    </a>
-                    <a class="productdetailslink" href="asd">
-                        <div class="bestsellerFlag"></div>
-                        <img class="album-cover" src="../Content/Covers/1.png" />
-                        <h1>
-                            Testowy obrazek
-                        </h1>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a class="addtocartlink" href="aaaa">
-                        <img src="../Content/Images/cart.png" />
-                    </a>
-                    <a class="productdetailslink" href="asd">
-                        <div class="bestsellerFlag"></div>
-                        <img class="album-cover" src="../Content/Covers/2.png" />
-                        <h1>
-                            Testowy obrazek
-                        </h1>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a class="addtocartlink" href="aaaa">
-                        <img src="../Content/Images/cart.png" />
-                    </a>
-                    <a class="productdetailslink" href="asd">
-                        <div class="bestsellerFlag"></div>
-                        <img class="album-cover" src="../Content/Covers/3.png" />
-                        <h1>
-                            Testowy obrazek
-                        </h1>
-                    </a>
-                </article>
-            </li>
+            @foreach (var best in Model.Bestsellers)
+            {
+                <li>
+                    <article>
+                        <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new { id = best.AlbumId })">
+                            <img src="../Content/Images/cart.png" />
+                        </a>
+                        <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = best.AlbumId })">
+                            <div class="bestsellerFlag"></div>
+                            <img class="album-cover" src="@Url.CoverIconFile(best.CoverFileName)" />
+                            <h1>
+                                @best.ArtistName - @best.AlbumTitle
+                            </h1>
+                        </a>
+                    </article>
+                </li>
+            }
         </ul>
     </section>
 

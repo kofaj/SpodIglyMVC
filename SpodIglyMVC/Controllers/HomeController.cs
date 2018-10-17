@@ -15,7 +15,7 @@ namespace SpodIglyMVC.Controllers
         {
             var genres = db.Genres.ToList();
             var newArrials = db.Albums.Where(w => !w.IsHidden).OrderByDescending(o => o.DateAdded).Take(3).ToList();
-            var bestSellers = db.Albums.Where(w => !w.IsHidden && w.IsBestseller).Take(3).OrderBy(g => new Guid()).ToList();
+            var bestSellers = db.Albums.Where(w => !w.IsHidden && w.IsBestseller).OrderBy(g => Guid.NewGuid()).Take(3).ToList();
 
             var vm = new HomeViewModel
             {
