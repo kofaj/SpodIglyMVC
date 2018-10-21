@@ -76,3 +76,14 @@ C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\EntityFramework.SqlServ
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.InitialCreate.resources
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.csproj.GenerateResource.cache
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.NewModelsAdded.resources
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Antlr3.Runtime.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\System.Web.Optimization.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\WebGrease.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.csprojAssemblyReference.cache
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\MvcSiteMapProvider.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\MvcSiteMapProvider.WebActivator.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\WebActivatorEx.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Web.Administration.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\MvcSiteMapProvider.xml
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\MvcSiteMapProvider.WebActivator.pdb
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\MvcSiteMapProvider.WebActivator.xml

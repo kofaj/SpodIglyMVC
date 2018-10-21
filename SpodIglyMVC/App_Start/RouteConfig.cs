@@ -11,7 +11,7 @@ namespace SpodIglyMVC
 
             routes.MapRoute(
                 name: "ProductDetails",
-                url: "album-{id}.html",
+                url: "album-{id}",
                 defaults: new { controller = "Store", action = "Details" }
                 );
 

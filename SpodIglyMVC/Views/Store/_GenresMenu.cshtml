@@ -1,0 +1,16 @@
+﻿@using SpodIglyMVC.Infrastructure
+@model IEnumerable<SpodIglyMVC.Models.Genre>
+
+
+<nav class="genres-vertical">
+    <ul>
+        @foreach (var gen in Model)
+        {
+            <li>
+                <a href="@Url.Action("List","Store", new { genrename = gen.Name.ToString() })" style="background-image: url(@Url.GenreIconPath(gen.IconFilename)); ">
+                    @gen.Name
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

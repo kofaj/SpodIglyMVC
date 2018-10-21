@@ -1,4 +1,6 @@
-﻿
+﻿@using SpodIglyMVC.Infrastructure
+@model SpodIglyMVC.ViewModels.HomeViewModel
+
 @{
     Layout = null;
 }
@@ -11,7 +13,45 @@
     <title>Index2</title>
 </head>
 <body>
-    <div> 
+    <div>
+        @Html.Partial("_ViewSwitcher")
+        <h3 class="ui-bar ui-bar-a">Witamy w sklepie</h3>
+        <div class="ui-body">
+            <ul data-role="listview" data-inset="true" data-divider-theme="a">
+
+                <li data-role="list-divider">Nowości</li>
+                @foreach (var item in Model.NewArrivals)
+                {
+                    <li>
+                        <a href="@Url.Action("Details","Store", new { id = item.AlbumId })" data-ajax="false">
+                            <img src="@Url.CoverIconFile(item.CoverFileName)" />
+                            <h2>@item.AlbumTitle</h2>
+                            <p>@item.ArtistName</p>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <br />
+            <ul data-role="listview" data-inset="true" data-filter-placeholder="Szukaj..." data-filter="true">
+                @foreach (var genre in Model.Genres)
+                {
+                    <li>
+                        <a href="@Url.Action("List", "Store", new { genrename = genre.Name.ToLower() })" data-ajax="false">@genre.Name</a>
+                    </li>
+                }
+            </ul>
+            <br />
+
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="https://www.facebook.com/eduwebpl" data-ajax="false" data-icon="heart">Facebook</a></li>
+                        <li><a href="@Url.Action("StaticContent", "Home", new { viewname = "Onas" })" data-ajax="false" data-icon="info">O nas</a></li>
+                        <li><a href="@Url.Action("StaticContent", "Home", new { viewname = "Kontakt" })" data-ajax="false" data-icon="mail">Kontakt</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+        </div>
     </div>
 </body>
 </html>
