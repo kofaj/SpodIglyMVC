@@ -8,5 +8,6 @@ namespace SpodIglyMVC.Infrastructure
     public static class Const
     {
         public const string NewItemCasheKey = "NewItemCasheKey";
+        public const string CartSessionKey = "CartData";
     }
 }

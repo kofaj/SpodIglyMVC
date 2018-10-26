@@ -286,6 +286,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\BundleMobileConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
@@ -300,7 +301,10 @@
     <Compile Include="Infrastructure\Const.cs" />
     <Compile Include="Infrastructure\DefaultCasheProvider.cs" />
     <Compile Include="Infrastructure\ICasheProvider.cs" />
+    <Compile Include="Infrastructure\ISessionManager.cs" />
     <Compile Include="Infrastructure\ProductDetailsDynamicNodeProvider.cs" />
+    <Compile Include="Infrastructure\SessionManager.cs" />
+    <Compile Include="Infrastructure\ShoppingCartManager.cs" />
     <Compile Include="Infrastructure\UrlHelper.cs" />
     <Compile Include="Migrations\201810142022334_InitialCreate.cs" />
     <Compile Include="Migrations\201810142022334_InitialCreate.Designer.cs">
@@ -312,10 +316,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -350,6 +356,7 @@
     <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

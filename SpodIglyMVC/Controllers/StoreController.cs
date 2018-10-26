@@ -20,10 +20,20 @@ namespace SpodIglyMVC.Controllers
             return View(album);
         }
 
-        public ActionResult List(string genrename)
+        public ActionResult List(string genrename, string searchQuery = null)
         {
             var genre = db.Genres.Include("Albums").Where(w => w.Name.ToUpper() == genrename.ToUpper()).Single();
-            var albums = genre.Albums.ToList();
+
+            var albums = genre.Albums.Where(w => (searchQuery == null ||
+                                        w.AlbumTitle.ToLower().Contains(searchQuery.ToLower()) ||
+                                        w.ArtistName.ToLower().Contains(searchQuery.ToLower())) && !w.IsHidden);
+            //sprawdzanie z jakim typem request mamy do czynienia (zwykly/ajax)
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_ProductList", albums);
+            }
+
+
             return View(albums);
         }
 
@@ -37,6 +47,15 @@ namespace SpodIglyMVC.Controllers
             var genreList = db.Genres.ToList();
 
             return PartialView("_GenresMenu", genreList);
+        }
+
+        public ActionResult AlbumsSuggestions(string term)
+        {
+            // select jest tylko po to aby zwracać lablelki (wymóg jquert ui)
+            var album = this.db.Albums.Where(w => !w.IsHidden && w.AlbumTitle.ToLower().Contains(term.ToLower())).
+                Take(5).Select(s => new { label = s.AlbumTitle });
+
+            return Json(album, JsonRequestBehavior.AllowGet);
         }
     }
 }
