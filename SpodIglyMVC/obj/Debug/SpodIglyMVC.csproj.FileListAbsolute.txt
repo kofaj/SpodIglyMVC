@@ -86,3 +86,4 @@ C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\roslyn\vbc.exe
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\roslyn\vbc.exe.config
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\roslyn\vbc.rsp
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.csprojAssemblyReference.cache

@@ -35,6 +35,24 @@ namespace SpodIglyMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult RemoveFromCart(int albumId)
+        {
+            int itemCount = shoppingCartManager.RemoveFromCart(albumId);
+            int cartItemsCount = shoppingCartManager.GetCartItemsCount();
+            decimal cartTotal = shoppingCartManager.GetCartTotalPrice();
+
+            // Return JSON to process in JS
+            var result = new CartRemoveViewModel
+            {
+                RemovedItemId = albumId,
+                RemovedItemCount = itemCount,
+                CartItemsCount = cartItemsCount,
+                CartTotal = cartTotal
+            };
+
+            return Json(result);
+        }
+
         public int GetCartItemsCount()
         {
             return shoppingCartManager.GetCartItemsCount();

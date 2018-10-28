@@ -28,7 +28,7 @@
             <table id="cart-table">
                 @foreach (var item in Model.CartItems)
                 {
-                    <tr>
+                    <tr id="cart-row-@item.Album.AlbumId">
                         <td>
                             <a href="@Url.Action("Details","Store", new { id = item.Album.AlbumId})">
                                 <img src="@Url.Content(Url.CoverIconFile(item.Album.CoverFileName))" />
@@ -69,40 +69,42 @@
 
     <script>
         $(function () {
+            $(".removeProduct").click(function () {
 
-            $(".removeProducts").click(function () {
+                var recordToDelete = $(this).attr("data-id");
 
-                var recordToTable = $(this).attr("data-id");
+                if (recordToDelete != '') {
 
-                if (recordToTable != '') {
-
-                    //send post request with AJAX
+                    // Send post request with AJAX
                     $.post("/Cart/RemoveFromCart", { "albumID": recordToDelete },
                         function (response) {
-                            //Success
+                            // Success
                             if (response.RemovedItemCount == 0) {
 
-                                $('#cart-row' + response.RemoveItemId).fadeOut('slow', function () {
+                                $('#cart-row-' + response.RemoveItemId).fadeOut('slow', function () {
                                     if (response.CartItemsCount == 0) {
                                         $("#cart-empty-message").removeClass("hidden");
                                     }
                                 });
                             } else {
-                                $('#cart-item-count' + response.RemoveItemId).text(response.RemovedItemCount);
+                                $('#cart-item-count-' + response.RemoveItemId).text(response.RemovedItemCount);
                             }
 
                             if (response.CartItemsCount == 0) {
-                                $('#cart-bottom-checkout').addClass('hidden');
+                                $('#cart-button-checkout').addClass('hidden');
                                 $('#total-price').addClass('invisible');
                             }
 
                             $('#total-price-value').text(response.CartTotal);
                             $('#cart-header-items-count').text(response.CartItemsCount);
+
                         });
 
                     return false;
                 }
             });
+
+        });
     </script>
 
 }

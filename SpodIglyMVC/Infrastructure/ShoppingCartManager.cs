@@ -60,7 +60,7 @@ namespace SpodIglyMVC.Infrastructure
             return cart;
         }
 
-        private int RemoveFromCart(int albumId)
+        public int RemoveFromCart(int albumId)
         {
             var cart = this.GetCart();
 
