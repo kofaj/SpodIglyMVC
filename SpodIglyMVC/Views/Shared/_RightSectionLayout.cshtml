@@ -1,7 +1,7 @@
-﻿@{
+﻿
+@{
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
-
 
 <div id="productlist-content">
 
@@ -9,7 +9,7 @@
 
     <div id="productlist-rightsection">
         <div id="breadcrumb-section">
-            <img src="../Content/Images/home-small.png" />
+            <img src="@Url.Content("~/Conetnt/Images/home-small.png")" />
             @Html.MvcSiteMap().SiteMapPath()
         </div>
         <section class="content-section">
@@ -26,6 +26,7 @@
 </div>
 
 @section ScriptsBottom
-{
-    @RenderSection("ScriptsBottom", required: false)
+{ 
+      @RenderSection("ScriptsBottom", required: false)
 }
+
