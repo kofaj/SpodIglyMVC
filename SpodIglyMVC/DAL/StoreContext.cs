@@ -1,4 +1,5 @@
-﻿using SpodIglyMVC.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using SpodIglyMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +7,8 @@ using System.Data.Entity.Migrations;
 
 namespace SpodIglyMVC.DAL
 {
-    public class StoreContext : DbContext
+    // dziedziczenie po IdentityDbContext<ApplicationUser> pozwoli na automatyczne wygenerowanie tabel w bazie odpowiedzialnych za logowanie
+    public class StoreContext : IdentityDbContext<ApplicationUser>
     {
         public StoreContext() : base("StoreContext")
         {
@@ -15,6 +17,11 @@ namespace SpodIglyMVC.DAL
         static StoreContext()
         {
             Database.SetInitializer(new StoreInitializer());
+        }
+
+        public static StoreContext Create()
+        {
+            return new StoreContext();
         }
 
         public DbSet<Album> Albums { get; set; }
