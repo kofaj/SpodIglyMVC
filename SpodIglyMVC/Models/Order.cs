@@ -7,9 +7,8 @@ namespace SpodIglyMVC.Models
     public class Order
     {
         public int OrderId { get; set; }
-
         public string UserId { get; set; }
-       // public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         [Required(ErrorMessage = "Musisz wprowadzić imię")]
         [StringLength(100)]

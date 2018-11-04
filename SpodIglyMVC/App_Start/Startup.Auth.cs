@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using SpodIglyMVC.Models;
 using SpodIglyMVC.App_Start;
+using Microsoft.Owin.Security.Facebook;
 
 namespace SpodIglyMVC
 {
@@ -55,9 +56,14 @@ namespace SpodIglyMVC
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            var options = new FacebookAuthenticationOptions()
+            {
+                AppId = "2060933680885657",
+                AppSecret = "185eb7299c72ba02e866bf3df30f179a"
+            };
+            options.Scope.Add("email");
+
+            app.UseFacebookAuthentication(options);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

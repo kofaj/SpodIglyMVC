@@ -93,7 +93,6 @@ C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Newtonsoft.Json.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Owin.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -102,7 +101,12 @@ C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Newtonsoft.Json.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.IdentityEF.resources
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Newtonsoft.Json.dll
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\bin\Newtonsoft.Json.xml
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.order.resources
+C:\Users\Lukasz\source\repos\SpodIglyMVC\SpodIglyMVC\obj\Debug\SpodIglyMVC.Migrations.newOrder.resources

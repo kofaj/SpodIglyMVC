@@ -106,9 +106,7 @@ namespace SpodIglyMVC.Infrastructure
             this.db.Orders.Add(newOrder);
 
             if (newOrder.OrderItems == null)
-            {
                 newOrder.OrderItems = new List<OrderItem>();
-            }
 
             decimal cartTotal = 0;
 
